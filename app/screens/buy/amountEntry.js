@@ -4,7 +4,7 @@ import TextInput from './../../components/textInput'
 
 export default class AmountEntry extends Component {
   static navigationOptions = {
-    title: 'Sell',
+    title: 'Buy',
   }
 
   constructor(props) {
@@ -15,7 +15,7 @@ export default class AmountEntry extends Component {
     }
   }
 
-  goToSendTo = () => {
+  next = () => {
     if (this.state.amount <= 0) {
       Alert.alert(
         'Invalid',
@@ -24,22 +24,10 @@ export default class AmountEntry extends Component {
       )
     }
     else {
-      this.props.navigation.navigate("SendTo", { amount: this.state.amount, note: this.state.note, reference: '' })
+      this.props.navigation.navigate("CreditCard", { amount: this.state.amount, note: this.state.note, reference: '' })
     }
   }
 
-  goToBarcodeScanner = () => {
-    if (this.state.amount <= 0) {
-      Alert.alert(
-        'Invalid',
-        'Enter valid amount',
-        [[{ text: 'OK' }]]
-      )
-    }
-    else {
-      this.props.navigation.navigate("QRcodeScanner", { amount: this.state.amount, note: this.state.note })
-    }
-  }
 
   amountChanged = (text) => {
     let amount = parseFloat(text)
@@ -71,7 +59,7 @@ export default class AmountEntry extends Component {
         </View>
         <TouchableHighlight
           style={styles.submit}
-          onPress={this.goToSendTo}>
+          onPress={this.next}>
           <Text style={{ color: 'white', fontSize: 20 }}>
             Next
           </Text>

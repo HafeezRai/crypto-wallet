@@ -36,6 +36,10 @@ import ChangePassword from './../screens/settings/security/changePassword'
 import TwoFactor from './../screens/settings/security/twoFactor'
 import SettingsNotifications from './../screens/settings/notifications'
 
+import CreditCard from './../screens/payment/creditCard'
+import Sell from './../screens/sell/amountEntry'
+import Buy from './../screens/buy/amountEntry'
+
 const RouteConfigs = {
   Login: {
     screen: Login,
@@ -142,6 +146,12 @@ const RouteConfigs = {
   SettingsNotifications: {
     screen: SettingsNotifications,
   },
+    CreditCard: {
+    screen: CreditCard,
+  },
+    Sell: {
+    screen: Sell,
+  },
 }
 
 export default StackNavigator(RouteConfigs, {
@@ -149,7 +159,7 @@ export default StackNavigator(RouteConfigs, {
     headerStyle: {
       backgroundColor: '#3C8DBC',
       paddingTop: Expo.Constants.statusBarHeight,
-      height: 65 + Expo.Constants.statusBarHeight,
+      height: 55 + Expo.Constants.statusBarHeight,
       borderColor: '#3C8DBC',
       shadowOpacity: 0,
       shadowOffset: {

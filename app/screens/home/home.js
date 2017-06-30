@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { View, StyleSheet, AsyncStorage, TouchableHighlight, Text } from 'react-native'
 import UserInfoService from './../../services/userInfoService'
-import Transections from './transections'
+import Transactions from './transactions'
 import CurrentBalance from './currentBalance'
 import Auth from './../../util/auth'
 
@@ -27,18 +27,11 @@ export default class Home extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <CurrentBalance logout={this.logout} style={styles.balance} />
-        <View style={styles.transection} >
-          <Transections logout={this.logout} />
-          <TouchableHighlight
-            style={styles.submit}
-            onPress={() => this.props.navigation.navigate("SendMoney")}>
-            <Text style={{ color: 'white', fontSize: 20 }}>
-              Send
-            </Text>
-          </TouchableHighlight>
-        </View>
+      <View style={{ flex: 1 }}>
+          <CurrentBalance logout={this.logout} style={styles.balance} />
+          <View style={styles.transaction} >
+            <Transactions logout={this.logout} />
+          </View>
       </View>
     )
   }
@@ -53,7 +46,7 @@ const styles = StyleSheet.create({
   balance: {
     flex: 1,
   },
-  transection: {
+  transaction: {
     flex: 5,
     backgroundColor: '#F7F7F7',
   },

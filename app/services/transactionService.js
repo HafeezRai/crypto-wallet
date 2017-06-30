@@ -1,12 +1,12 @@
 import BaseService from './baseService'
 
-var transectionService = {
-  getAllTransections: () => {
+var transactionService = {
+  getAllTransactions: () => {
     return BaseService.get('transactions/')
   },
 
-  getNextTransections: (url) => {
-    return BaseService.getWithFullUrl(url)
+  getNextTransactions: (url) => {
+    return BaseService.getWithFullUrl(url);
   },
 
   sendMoney: (amount, recipient, note) => {
@@ -27,4 +27,4 @@ var transectionService = {
   },
 }
 
-export default transectionService
+export default transactionService

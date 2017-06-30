@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Expo from 'expo'
 import { View, KeyboardAvoidingView, StyleSheet, AsyncStorage, TouchableHighlight, Text, Alert, ListView, ActivityIndicator } from 'react-native'
-import TransectionService from './../../services/transectionService'
+import TransactionService from './../../services/transactionService'
 import Contact from './../../components/contact'
 import ResetNavigation from './../../util/resetNavigation'
 import TextInput from './../../components/textInput'
@@ -163,7 +163,7 @@ export default class AmountEntry extends Component {
   }
 
   transferConfirmed = async (amount) => {
-    let responseJson = await TransectionService.sendMoney(amount, this.state.reference, this.state.note)
+    let responseJson = await TransactionService.sendMoney(amount, this.state.reference, this.state.note)
     if (responseJson.status === "success") {
       Alert.alert('Success',
         "Transaction successful",

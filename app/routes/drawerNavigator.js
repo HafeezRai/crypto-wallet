@@ -11,28 +11,18 @@ import Receive from './../screens/receive/receive'
 import Logout from './../screens/auth/logout'
 import DrawerButton from './../components/drawerButton'
 import DrawerHeader from './../components/drawerHeader'
+import Sell from './../screens/sell/amountEntry'
+import Buy from './../screens/buy/amountEntry'
 
 const RouteConfigs = {
   Home: {
     screen: Home,
   },
-  Deposit: {
-    screen: Deposit,
+  Buy: {
+    screen: Buy,
   },
-  Withdraw: {
-    screen: Withdraw,
-  },
-  Receive: {
-    screen: Receive,
-  },
-  Accounts: {
-    screen: Accounts,
-  },
-  Settings: {
-    screen: Settings,
-  },
-  About: {
-    screen: About,
+  Sell: {
+    screen: Sell,
   },
   Logout: {
     screen: Logout,
@@ -46,7 +36,7 @@ const CustomDrawerContentComponent = (props) => (
       <DrawerItems
         {...props}
         activeTintColor="white"
-        activeBackgroundColor="#3C8DBC"
+        activeBackgroundColor="#2070A0"
         inactiveTintColor="white"
         inactiveBackgroundColor="transparent"
         labelStyle={{ margin: 15, alignItems: 'center', fontSize: 18, fontWeight: 'normal' }}
@@ -68,6 +58,6 @@ export default DrawerNavigator(RouteConfigs, {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#2070A0',
+    backgroundColor: '#3C8DBC',
   },
 })
